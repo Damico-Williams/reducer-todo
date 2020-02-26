@@ -1,7 +1,7 @@
 
 const justdoit = [
     {
-      item: "Watch Netflix",
+      item: "Netflix",
       completed: false,
       id: 12
       
