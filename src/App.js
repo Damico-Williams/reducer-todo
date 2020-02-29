@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
+import React,{useReducer, useState} from 'react';
+import TodoForm from './components/TodoForm.js'
+import TodoList from './components/TodoList.js'
+import { initialState, theReducer } from './reducers/reduce.js'
 import './App.css';
 
-function App() {
+const App = () => {
+  
+
+  const [state, dispatch] = useReducer(theReducer, initialState);
+  // console.log(state)
+
+  const addToDo = newTodo => {
+    dispatch({ type: "ADD_TODO", payload: newTodo});
+}
+
+  const clearCompleted = () => {
+   dispatch({type:"CLEAR_COMPLETED"})
+}
+
+const listToggle = (id) => {
+  console.log(id)
+  dispatch({type: "LIST_TOGGLE", payload: id})
+}
+
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h2>Welcom to the Todo Reducer App!</h2>
+      <TodoForm  addToDo={addToDo} clearCompleted={clearCompleted}/>
+      <TodoList todolist={state.todo} listToggle={listToggle}/>
     </div>
-  );
+  )
+
 }
 
 export default App;
