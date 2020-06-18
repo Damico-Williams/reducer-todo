@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../App.css';
 
 function TodoForm({addToDo, clearCompleted}) {
     
@@ -32,8 +32,8 @@ function TodoForm({addToDo, clearCompleted}) {
              value={newTodo}
              onChange={handleChange}
              />
-             <button>Add Todo</button>
-             <button onClick={clearCompleted}>Clear</button>
+             <button className={"todob"}>Add Todo</button>
+             <button onClick={clearCompleted} className={"todob"}>Clear</button>
              </form>
         )
 }

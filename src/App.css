@@ -32,11 +32,29 @@
   text-decoration: line-through;
   user-select: none;
   cursor: pointer;
+  color:red;
 }
 
 .removeunderline {
   text-decoration: none;
 }
+
+.todob {
+color: #20bf6b !important;
+background: #ffffff;
+padding: 2px 5px;
+border: 2px solid #20bf6b !important;
+border-radius: 6px;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+
+.todob:hover {
+  color: #494949 !important;
+  border-radius: 50px;
+  border-color: #494949 !important;
+  transition: all 0.3s ease 0s;
+  }
 
 @keyframes App-logo-spin {
   from {

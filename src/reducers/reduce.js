@@ -2,7 +2,7 @@
 export const initialState = {
   todo:[
   {
-  item: 'Learn about reducers',
+  item: '',
   completed: false,
   id: 3892987589
  }
